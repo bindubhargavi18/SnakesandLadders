@@ -9,11 +9,10 @@ public class SnakesLadders
 	
 	public static void main(String[] args) 
 	{
-		
 		new SnakesLadders().play();
 	}
-		
-		
+	
+	//method for rolling a dice
 	public int rollDice()
 	{
 		Random r=new Random();
@@ -21,13 +20,16 @@ public class SnakesLadders
 		System.out.println("Number that player got on dice: "+dRoll);
 		return dRoll;
 	}
+	
+	//method to check whether player got ladder,snake or no play
 	public int option()
 	{
 		Random r=new Random();
 		int o=r.nextInt(3);
-		return o;
-		
+		return o;		
 	}
+	
+	//method for playing game
 	public void play()
 	{
 		int playerPosition=startPosition;
@@ -36,8 +38,7 @@ public class SnakesLadders
 		if(op==0)
 		{
 			System.out.println("Player has no play, stays in same position");
-			System.out.println("Position of player will be: " +playerPosition);
-			
+			System.out.println("Position of player will be: " +playerPosition);			
 		}
 		else if (op==1)
 		{
@@ -49,11 +50,12 @@ public class SnakesLadders
 		{
 			System.out.println("---player got snake---");
 			playerPosition-=die;
+			
 			if(playerPosition<0)
 				playerPosition=0;
 			System.out.println("position of player after getting snake: "+playerPosition);
 		}
-		//return playerPosition;
+		
 	}
 
 }
