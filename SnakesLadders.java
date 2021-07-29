@@ -1,8 +1,6 @@
 package snakeladder;
 import java.util.*;
 
-
-
 public class SnakesLadders 
 {
 	static final int startPosition=0;
