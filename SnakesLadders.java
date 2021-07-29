@@ -31,10 +31,12 @@ public class SnakesLadders
 	public void play()
 	{
 		int playerPosition=startPosition;
+		int diceCount=0;
 		while(playerPosition<winPoint)
 		{
 			System.out.println(" ");
 			int die=rollDice();
+			diceCount++;
 			int op=option();
 			if(op==0)
 			{
@@ -59,7 +61,8 @@ public class SnakesLadders
 				System.out.println("position: "+playerPosition);
 			}
 		}
-		
+		System.out.println(" ");
+		System.out.println("Number of times dice rolled: "+diceCount);		
 	}
 
 }
