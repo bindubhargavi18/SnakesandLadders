@@ -45,6 +45,8 @@ public class SnakesLadders
 			{
 				System.out.println("---Player got ladder---");
 				playerPosition+=die;
+				if(playerPosition>100)
+					playerPosition-=die;
 				System.out.println("position: "+playerPosition);
 			}
 			else
