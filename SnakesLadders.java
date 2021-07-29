@@ -3,8 +3,8 @@ import java.util.*;
 
 public class SnakesLadders 
 {
-	static final int startPosition=0;
-	
+	static final int startPosition=0;	
+	static final int winPoint=100;
 	public static void main(String[] args) 
 	{
 		new SnakesLadders().play();
@@ -31,27 +31,31 @@ public class SnakesLadders
 	public void play()
 	{
 		int playerPosition=startPosition;
-		int die=rollDice();
-		int op=option();
-		if(op==0)
+		while(playerPosition<winPoint)
 		{
-			System.out.println("Player has no play, stays in same position");
-			System.out.println("Position of player will be: " +playerPosition);			
-		}
-		else if (op==1)
-		{
-			System.out.println("---Player got ladder---");
-			playerPosition+=die;
-			System.out.println("position of player after getting ladder: "+playerPosition);
-		}
-		else
-		{
-			System.out.println("---player got snake---");
-			playerPosition-=die;
-			
-			if(playerPosition<0)
-				playerPosition=0;
-			System.out.println("position of player after getting snake: "+playerPosition);
+			System.out.println(" ");
+			int die=rollDice();
+			int op=option();
+			if(op==0)
+			{
+				System.out.println("---Player has no play---");
+				System.out.println("Position: " +playerPosition);			
+			}
+			else if (op==1)
+			{
+				System.out.println("---Player got ladder---");
+				playerPosition+=die;
+				System.out.println("position: "+playerPosition);
+			}
+			else
+			{
+				System.out.println("---player got snake---");
+				playerPosition-=die;
+				
+				if(playerPosition<0)
+					playerPosition=0;
+				System.out.println("position: "+playerPosition);
+			}
 		}
 		
 	}
